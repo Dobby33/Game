@@ -1,0 +1,39 @@
+# Add to ~/.nanorc via
+# include ~/Game/utils/nano/ts.nanorc
+
+syntax javascript "\.(js)|(ts)$"
+comment "//"
+
+color cyan "\<(number|object|string|any|unknown|boolean)\>"
+color brightcyan "\<[A-Z]\w+\>"
+color brightblue "\<(interface|type)\>"
+color brightblue "\<(as)\>"
+color brightyellow "\<(from)\>"
+color yellow "\(|\)|\[|\]|\{|\}"
+color brightblack "\.map|\.forEach|\.slice|\.filter|\.repeat|\.replace|\.splice|\.sort|\.find|\.findIndex|\.indexOf|\.lastIndexOf|\.reduce|\.join"
+# double/float with exponent
+color cyan "\<[0-9]+(\.[0-9]*)?(e(\-|\+)?[0-9]+)\>"
+
+## Default values from /usr/share/nano/javascript.nanorc
+
+# Declarational stuff.
+color green "\<(async|class|const|extends|function|let|this|typeof|var|void)\>"
+# Flow control and special keywords.
+color brightyellow "\<(do|while|if|else|switch|case|default|for|each|in|of|with)\>"
+color brightyellow "\<(await|export|import|throw|try|catch|finally|new|delete)\>"
+# "Exit" points.
+color magenta "\<(break|continue|return|yield)\>"
+
+# Octal/decimal and hexadecimal numbers.
+color cyan "\<([0-9]+|0x[0-9A-Fa-f]+)\>"
+# Special values.
+color cyan "\<(true|false|null|undefined)\>"
+
+# Strings.
+color brightmagenta ""(\\.|[^"])*"" "'(\\.|[^'])*'" "`(\\.|[^`])*`"
+# Comments.
+color brightblue "(^|[[:space:]])//.*"
+color brightblue start="/\*" end="\*/"
+
+# Trailing whitespace.
+color ,green "[[:space:]]+$"
